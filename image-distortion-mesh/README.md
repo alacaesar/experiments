@@ -6,7 +6,7 @@ This experimens uses PaperJS to basically do this:
 
 It creates a mesh of triangles *(Paths)* based on the provided image and applies the average color of the correspondant point in the *bitmap* to each triangle.
 
-See it in action : <a href="http://www.alacaesar.com/experiments/image-distortion-mesh/" target="_blank">Demo</a>
+See it in action : <a href="https://alacaesar.github.io/image-distortion-mesh/" target="_blank">Demo</a>
 
 ##### Config params:
 `size` : *(Integer)* the width of the result visual in pixels.
