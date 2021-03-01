@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <title>globe</title>
+  
+    <style>
+
+      body{
+        padding: 0;
+        margin: 0;
+      }
+    
+      #globe {
+        height: 100vh;
+        width: 100vw;
+        pointer-events: none;
+        touch-action: none;
+      }
+    
+      @media(hover) {
+        #globe {
+          pointer-events: initial;
+          touch-action: initial;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="globe-container">
+      <div id="globe"><canvas></canvas></div>
+    </div>
+
+    <script src="js/three.js"></script>
+    <script src="js/orbital-controls.js"></script>
+    <script src="js/globe.js"></script>
+
+    <script>
+      const coords = [
+        {lat:48.856700, lng:2.350800, city:"Paris", open:false},
+        {lat:51.507222, lng:-0.1275, city:"London", open:false},
+        {lat:34.050000, lng:-118.250000, city:"LA"},
+        {lat:41.836944, lng:-87.684722, city:"Chicago"},
+        {lat:35.683333, lng:139.683333, city:"Tokyo"},
+        {lat:33.333333, lng:44.383333, city:"Baghdad", open:false},
+        {lat:40.712700, lng:-74.005900, city:"New York"},
+        {lat:55.750000, lng:37.616667, city:"Moscow"},
+        {lat:35.117500, lng:-89.971111, city:"Memphis"},
+        {lat:-33.925278, lng:18.423889, city:"Cape Town"},
+        {lat:32.775833, lng:-96.796667, city:"Dallas"},
+        {lat:52.366667, lng:4.900000, city:"Amsterdam"},
+        {lat:42.358056, lng:-71.063611, city:"Boston"},
+        {lat:52.507222, lng:13.145833, city:"Berlin"},
+        {lat:37.783333, lng:-122.416667, city:"San Francisco"}
+      ];
+
+      // Koordinatlar yukarıdaki formatta aşağıdaki gibi eklenebilir
+      Globe.init(function(){
+        for(var i=0; i<coords.length; ++i){
+          Globe.addMarker(coords[i]);
+        }
+      });
+
+      // Noktalara tıklanmayı yakalamak için aşağıdaki fx kullanılabilir
+      function onGlobeEvent(obj){
+        console.log(obj);
+      }
+    </script>
+  </body>
+</html>
